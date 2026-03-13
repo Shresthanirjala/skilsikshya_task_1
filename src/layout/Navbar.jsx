@@ -40,9 +40,6 @@ const Navbar = () => {
               <span className="absolute inset-x-0 -bottom-1 h-0.5 origin-left scale-x-0 transform bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </a>
           ))}
-          <Button className="transition-transform hover:scale-105">
-            Get Started
-          </Button>
         </nav>
 
         <div className="md:hidden">

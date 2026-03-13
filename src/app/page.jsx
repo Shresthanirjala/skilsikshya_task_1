@@ -91,7 +91,7 @@ const Page = () => {
     },
   ];
 
-  const handleMouseLeave = id => {
+  const handleMouseLeave = (id) => {
     setHoveredId(null);
     if (id === 2) {
       setTimeout(() => setSlideIndex(0), 300);
@@ -101,20 +101,24 @@ const Page = () => {
   const nextSlide = (e, id) => {
     e.stopPropagation();
     if (id === 2) {
-      setSlideIndex(prev => (prev === 0 ? 1 : 0));
+      setSlideIndex((prev) => (prev === 0 ? 1 : 0));
     }
   };
 
   const prevSlide = (e, id) => {
     e.stopPropagation();
     if (id === 2) {
-      setSlideIndex(prev => (prev === 1 ? 0 : 1));
+      setSlideIndex((prev) => (prev === 1 ? 0 : 1));
     }
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-background py-32 px-4 sm:px-8 overflow-x-hidden overflow-y-visible">
+    <div className="min-h-screen bg-white dark:bg-background py-32 px-4 sm:px-8 overflow-x-hidden overflow-y-visible font-quicksand">
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+        .font-quicksand { font-family: 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+
         @keyframes float {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-20px); }
@@ -127,8 +131,24 @@ const Page = () => {
         }
       `}</style>
 
+      {/* Section Header */}
+      <div className="w-full max-w-[95rem] mx-auto flex flex-col gap-3 md:gap-4 md:px-8">
+        <p className="text-sm md:text-base font-semibold text-gray-700 tracking-wide">
+          Your SkillShikshya Journey
+        </p>
+        <h1 className="text-3xl md:text-[2.75rem] font-extrabold tracking-tight leading-snug">
+          <span className="text-[#12b886]">Step</span>{" "}
+          <span className="text-[#343a40]">In.</span>{" "}
+          <span className="text-[#12b886]">Skill</span>{" "}
+          <span className="text-[#343a40]">Up.</span>{" "}
+          <span className="text-[#12b886]">Stand</span>{" "}
+          <span className="text-[#343a40]">Out</span>{" "}
+          <span className="align-middle">🚀</span>
+        </h1>
+      </div>
+
       <div className="w-full max-w-[95rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-20 lg:gap-y-20 mt-12 md:px-8">
-        {cardsData.map(card => (
+        {cardsData.map((card) => (
           <div
             key={card.id}
             onMouseEnter={() => setHoveredId(card.id)}
@@ -155,13 +175,13 @@ const Page = () => {
                       : "mr-auto text-left"
                   }`}
                 >
-                  <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-3">
+                  <h2 className="text-[1.9rem] md:text-[2.1rem] font-extrabold tracking-tight mb-3">
                     {card.title}
                   </h2>
-                  <h3 className="text-lg md:text-xl font-semibold mb-5 opacity-95">
+                  <h3 className="text-base md:text-lg font-semibold mb-4 opacity-95">
                     {card.subtitle}
                   </h3>
-                  <p className="text-sm md:text-base leading-relaxed opacity-90 font-medium">
+                  <p className="text-[0.9rem] md:text-[0.95rem] leading-relaxed opacity-90 font-medium">
                     {card.description}
                   </p>
                 </div>
@@ -189,6 +209,26 @@ const Page = () => {
                 }`}
                 style={{ backgroundColor: card.bgColor }}
               >
+                {/* WOW stickers on hover for first card */}
+                {card.id === 1 && (
+                  <>
+                    <div className="absolute left-10 top-10 w-24 md:w-28 z-30">
+                      <img
+                        src="/wow.png"
+                        alt="Wow sticker"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                    <div className="absolute right-10 bottom-10 w-24 md:w-28 z-30">
+                      <img
+                        src="/wow.png"
+                        alt="Wow sticker"
+                        className="w-full h-auto object-contain"
+                      />
+                    </div>
+                  </>
+                )}
+
                 {/* Left Cutout */}
                 <div className="absolute -left-px top-1/2 -translate-y-1/2 w-[70px] h-[200px] z-40 text-white dark:text-background pointer-events-none">
                   <svg
@@ -240,7 +280,7 @@ const Page = () => {
             {card.hoverState && hoveredId === card.id && (
               <div className="absolute inset-0 z-50 pointer-events-none">
                 <button
-                  onClick={e => prevSlide(e, card.id)}
+                  onClick={(e) => prevSlide(e, card.id)}
                   className={`pointer-events-auto absolute -left-1 md:left-0 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-black hover:bg-gray-50 transition-colors ${
                     card.hoverState.clickable
                       ? "cursor-pointer active:scale-95"
@@ -250,7 +290,7 @@ const Page = () => {
                   <ArrowLeft className="w-6 h-6 stroke-[1.5]" />
                 </button>
                 <button
-                  onClick={e => nextSlide(e, card.id)}
+                  onClick={(e) => nextSlide(e, card.id)}
                   className={`pointer-events-auto absolute -right-1 md:right-0 top-1/2 -translate-y-1/2 w-14 h-14 md:w-16 md:h-16 bg-white rounded-full shadow-[0_4px_20px_rgba(0,0,0,0.12)] flex items-center justify-center text-black hover:bg-gray-50 transition-colors ${
                     card.hoverState.clickable
                       ? "cursor-pointer active:scale-95"
