@@ -131,7 +131,6 @@ const Page = () => {
         }
       `}</style>
 
-      {/* Section Header */}
       <div className="w-full max-w-[95rem] mx-auto flex flex-col gap-3 md:gap-4 md:px-8">
         <p className="text-sm md:text-base font-semibold text-gray-700 tracking-wide">
           Your SkillShikshya Journey
@@ -209,7 +208,6 @@ const Page = () => {
                 }`}
                 style={{ backgroundColor: card.bgColor }}
               >
-                {/* WOW stickers on hover for first card */}
                 {card.id === 1 && (
                   <>
                     <div className="absolute left-10 top-10 w-24 md:w-28 z-30">
@@ -229,7 +227,6 @@ const Page = () => {
                   </>
                 )}
 
-                {/* Left Cutout */}
                 <div className="absolute -left-px top-1/2 -translate-y-1/2 w-[70px] h-[200px] z-40 text-white dark:text-background pointer-events-none">
                   <svg
                     width="70"
@@ -241,7 +238,6 @@ const Page = () => {
                   </svg>
                 </div>
 
-                {/* Right Cutout */}
                 <div className="absolute -right-[1px] top-1/2 -translate-y-1/2 w-[70px] h-[200px] z-40 text-white dark:text-background pointer-events-none">
                   <svg
                     width="70"
