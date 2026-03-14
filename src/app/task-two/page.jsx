@@ -84,13 +84,13 @@ export default function InteractiveCards() {
                 {/* Click indicator for inactive cards */}
                 {!isActive && (
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 pointer-events-none flex flex-col items-center gap-1">
-                    <span className="text-gray-700 text-base font-semibold tracking-wide whitespace-nowrap leading-none">
+                    <span className="text-gray-700 text-xl font-semibold tracking-wide whitespace-nowrap leading-none">
                       Click me
                     </span>
                     <img
                       src="/Group.png"
                       alt="Click"
-                      className="h-8 w-auto object-contain"
+                      className="h-10 w-auto object-contain"
                     />
                   </div>
                 )}

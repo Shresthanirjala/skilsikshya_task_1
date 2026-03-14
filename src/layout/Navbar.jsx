@@ -23,7 +23,7 @@ const Navbar = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-8">
         <div className="flex items-center gap-2">
           <a href="/" className="text-2xl font-extrabold tracking-tight">
-            <span className="bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent transition-all duration-300 hover:opacity-80">
+            <span className="text-blue-500 bg-clip-text transition-all duration-300 hover:opacity-80">
               Vrit Tech
             </span>
           </a>
