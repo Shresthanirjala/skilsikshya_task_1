@@ -116,7 +116,7 @@ const Page = () => {
     <div className="min-h-screen bg-white dark:bg-background py-32 px-4 sm:px-8 overflow-x-hidden overflow-y-visible font-quicksand">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
-        .font-quicksand { font-family: 'Quicksand', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+        .font-outfit { font-family: 'Outfit' }
 
 
         @keyframes float {
@@ -146,7 +146,7 @@ const Page = () => {
         </h1>
       </div>
 
-      <div className="w-full max-w-[95rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-20 lg:gap-y-20 mt-12 md:px-8">
+      <div className="w-full max-w-[95rem] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-x-10 gap-y-24 lg:gap-y-28 mt-12 md:px-8">
         {cardsData.map((card) => (
           <div
             key={card.id}
@@ -194,7 +194,7 @@ const Page = () => {
                 <img
                   src={card.img}
                   alt={card.title}
-                  className="w-full h-auto object-contain pointer-events-none"
+                  className="w-full h-auto object-contain pointer-events-none "
                 />
               </div>
             </div>
@@ -227,7 +227,7 @@ const Page = () => {
                   </>
                 )}
 
-                <div className="absolute -left-px top-1/2 -translate-y-1/2 w-[70px] h-[200px] z-40 text-white dark:text-background pointer-events-none">
+                <div className="absolute -left-px top-1/2 -translate-y-1/2 w-[70px] h-[200px] z-40  text-white dark:text-background pointer-events-none">
                   <svg
                     width="70"
                     height="200"

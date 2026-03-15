@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 
-// Google Font Import for Outfit
 const fontStyles = `
   @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
   .font-outfit { font-family: 'Outfit' }
@@ -55,7 +54,6 @@ export default function InteractiveCards() {
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-8 font-outfit overflow-hidden">
       <style dangerouslySetInnerHTML={{ __html: fontStyles }} />
       <div className="w-full max-w-6xl mx-auto flex flex-col">
-        {/* Main Header */}
         <div className="mb-14">
           <p className="text-gray-600 text-lg mb-1">
             Explore our classes and master trending skills!
@@ -67,7 +65,6 @@ export default function InteractiveCards() {
           </h1>
         </div>
 
-        {/* Cards Container */}
         <div className="flex items-end justify-between w-full h-[540px] gap-6">
           {cards.map((card, index) => {
             const isActive = activeIndex === index;
@@ -81,7 +78,6 @@ export default function InteractiveCards() {
                   isActive ? "w-[60%]" : "w-[20%]"
                 }`}
               >
-                {/* Click indicator for inactive cards */}
                 {!isActive && (
                   <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-50 pointer-events-none flex flex-col items-center gap-1">
                     <span className="text-gray-700 text-xl font-semibold tracking-wide whitespace-nowrap leading-none">
@@ -103,7 +99,6 @@ export default function InteractiveCards() {
                       : "hover:bg-[#faebec]"
                   }`}
                 >
-                  {/* Red Background Reveal */}
                   <div
                     className="absolute inset-0 bg-[#C33241] transition-all duration-[900ms] ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0"
                     style={{
@@ -113,7 +108,6 @@ export default function InteractiveCards() {
                     }}
                   />
 
-                  {/* INACTIVE STATE CONTENT (The Text for dim cards) */}
                   <div
                     className={`absolute inset-0 flex flex-col justify-between items-center py-14 transition-all duration-500 z-10 text-[#C33241] ${
                       isActive
@@ -121,7 +115,6 @@ export default function InteractiveCards() {
                         : "opacity-100 delay-300"
                     }`}
                   >
-                    {/* Vertical Text Area */}
                     <div className="flex-1 w-full relative">
                       <div className="absolute top-[45%] left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 w-[280px] flex flex-col items-start gap-1">
                         <h3 className="text-3xl font-Quicksand font-bold tracking-tight leading-none">
@@ -134,14 +127,13 @@ export default function InteractiveCards() {
                         </p>
                       </div>
                     </div>
-                    {/* Collapsed Bottom Number */}
+
                     <div className="text-[6.5rem] font-black flex items-start tracking-tighter leading-none">
                       {card.num}
                       <span className="text-4xl mt-1 leading-none">+</span>
                     </div>
                   </div>
 
-                  {/* ACTIVE STATE CONTENT (Expanded) */}
                   <div
                     className={`absolute inset-0 p-12 flex flex-col justify-between transition-all duration-500 text-white z-20 ${
                       isActive ? "opacity-100" : "opacity-0 pointer-events-none"
